@@ -65,6 +65,7 @@ body .idf-widget-container,
   cursor: pointer;
 }
 
+/* Arrow added as a pseudo element */
 .idf-widget-container .article:after {
   content: '';
   position: absolute;
