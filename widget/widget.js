@@ -32,12 +32,16 @@ var idfWidget = {
   },
 
   loadMoreArticles: function () {
+    idfWidget.toggleButtonAvailability();
     $.ajax({
       url: idfWidget.articlesApi + '/load-more/' +
         idfWidget.getLastArticleSlug() + '?ep=' + idfWidget.educationalPartner
     }).done(function (data) {
       idfWidget.parentElem.find('.articlesWidget__articles').append(data);
+      idfWidget.scrollList();
+      idfWidget.toggleButtonAvailability();
     }).fail(function () {
+      idfWidget.toggleButtonAvailability();
       idfWidget.parentElem
         .find('.articlesWidget__articles')
         .append('<h3>Error: Can not load further data</h3>');
@@ -51,5 +55,17 @@ var idfWidget = {
       originalString.indexOf('/article/') + 9,
       originalString.indexOf('?'),
     );
+  },
+
+  toggleButtonAvailability: function() {
+    var button = $('.articlesWidget__loadMore').find('button');
+    button.prop('disabled', !button.prop('disabled'));
+  },
+
+  scrollList: function() {
+    var list = $('.articlesWidget__articles');
+    pixelsToScroll = (list.find('li').length * 100).toString();
+    list.animate({scrollTop: pixelsToScroll + 'px'}, 1000);
   }
+  
 }
