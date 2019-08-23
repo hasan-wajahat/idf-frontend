@@ -3,10 +3,9 @@
   "version": "0.0.2",
   "description": "IDF front-end code challenge",
   "main": "widget/widget.js",
-  "author": "IDF",
+  "author": "Hasan Wajahat",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.26",
     "eslint": "^6.2.1",
     "eslint-config-airbnb-base": "^14.0.0"
   }
