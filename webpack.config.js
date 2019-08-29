@@ -79,12 +79,12 @@ const defaultConfig = {
 
 module.exports = [{
   ...defaultConfig,
-  entry: './src/widget.js',
+  entry: './src/index.js',
   output: {
     path: distDir,
     publicPath: '/',
     filename: 'widget.js',
-    library: 'EmbeddableWidget',
+    library: 'IdfWidget',
     libraryExport: 'default',
     libraryTarget: 'window',
   },
