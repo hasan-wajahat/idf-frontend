@@ -1,0 +1,141 @@
+body .idf-widget-container {
+  font-family: Roboto, sans-serif;
+  color: #404040;
+}
+
+.idf-widget-container {
+  width: 300px;
+  min-height: 600px;
+  padding: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+
+  h1,
+  h2,
+  h3,
+  p {
+    font-family: Roboto, sans-serif;
+    color: #404040;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #404040;
+    text-decoration: none
+  }
+
+  .articlesWidget__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .articlesWidget__header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #404040;
+    margin: 10px 0 5px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .articlesWidget__header:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: -8px;
+    z-index: 2;
+    background: #009cde;
+  }
+
+  .articlesWidget__articles {
+    max-height: 650px;
+    overflow: auto;
+  }
+
+  .article {
+    padding: 10px;
+    border-top: solid 2px #dddddd;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Arrow added as a pseudo element */
+  .article:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    border: solid #009cde;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.2s, background-color 0.2s;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+
+  .article:hover {
+    background-color: #f9f9f9
+  }
+
+  .article:hover:after {
+    transform: rotate(-45deg) translateX(5px);
+  }
+
+  .article__title {
+    font-family: Roboto;
+    font-size: 16px;
+    width: 250px;
+    line-height: 1.25;
+  }
+
+  .article__publishedTime {
+    display: block;
+    font-size: 10px;
+    line-height: normal;
+    color: #848484;
+    margin-top: 5px;
+  }
+
+  .articlesWidget__loadMore {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .articlesWidget__loadMore button {
+    width: 150px;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    background-color: #dddddd;
+    font-family: Roboto;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .articlesWidget__loadMore button:focus {
+    outline: none;
+  }
+
+  .articlesWidget__loadMore button:hover {
+    border: 2px solid #b8b5b5;
+  }
+
+  .articlesWidget__text {
+    margin-top: 20px;
+    width: 280px;
+  }
+
+  .articlesWidget__text a {
+    color: #009cde;
+  }
+
+}

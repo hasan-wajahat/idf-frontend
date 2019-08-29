@@ -6,9 +6,10 @@
  * idfWidget.initialize(educational_partner, element_to_attach_to)
  */
 
+import './widget.scss';
+
 // IDF's educational partners
 const ARTICLES_API = 'https://www.interaction-design.org/widgets/articles';
-
 
 function toggleButtonAvailability() {
   const button = $('.articlesWidget__loadMore').find('button');
@@ -42,7 +43,7 @@ export default class widget {
     });
   }
 
-  renderInitialData(ep, attachElem) {
+  renderInitialData = (ep, attachElem) => {
     const element = document.createElement('div');
     const containerClass = 'idf-widget-container';
     element.setAttribute('class', containerClass);
@@ -61,7 +62,7 @@ export default class widget {
     });
   }
 
-  attachButtonListener() {
+  attachButtonListener = () => {
     $('.articlesWidget__loadMore').find('button').click(this.loadMoreArticles);
   }
 
@@ -88,7 +89,7 @@ export default class widget {
    * list of articles. Easiest approach for getting that is to
    * locate the last item and get slug present in the href attr
    */
-  getLastArticleSlug() {
+  getLastArticleSlug = () => {
     const lastItem = this.parentElem.find('li').last().find('a');
     const originalString = lastItem.attr('href');
     return originalString.substring(
